@@ -54,8 +54,8 @@ robozzle_squares = []
 grid = [0 for i in range(WIDTH*HEIGHT)]
 
 size = 990/HEIGHT
-for y in range(WIDTH):
-    for x in range(HEIGHT):
+for y in range(HEIGHT):
+    for x in range(WIDTH):
         robozzle_squares.append(pygame.Rect(size*x, size*y, size, size))
 
 while running:
