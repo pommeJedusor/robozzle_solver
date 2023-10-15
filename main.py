@@ -3,23 +3,15 @@ import pygame
 WIDTH = 16
 HEIGHT = 12
 
-def ungrey(grid):
-    for i in range(81):
-        if grid[i]==-1:
-            grid[i]=1
-
 def up_color_square(pos, grid, robozzle_squares):
     for i in range(WIDTH*HEIGHT):
-        if robozzle_squares[i].collidepoint(pos):
-            if grid[i]==-1:
-                ungrey(grid)
-                return   
-            grid[i] +=1
+        if robozzle_squares[i].collidepoint(pos) and grid[i] != 3:
+            grid[i] += 1
             return
 
 def down_color_square(pos, grid, robozzle_squares):
     for i in range(WIDTH*HEIGHT):
-        if robozzle_squares[i].collidepoint(pos):
+        if robozzle_squares[i].collidepoint(pos) and grid[i] != -1:
             grid[i] -=1
             return
 
