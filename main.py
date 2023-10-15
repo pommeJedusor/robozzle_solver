@@ -11,7 +11,7 @@ def up_color_square(pos, grid, robozzle_squares):
 
 def down_color_square(pos, grid, robozzle_squares):
     for i in range(WIDTH*HEIGHT):
-        if robozzle_squares[i].collidepoint(pos) and grid[i] != -1:
+        if robozzle_squares[i].collidepoint(pos) and grid[i] != 0:
             grid[i] -=1
             return
 
@@ -21,9 +21,7 @@ def update_view(screen, blockudoku_board, blockudoku_squares):
     #update the view of the grid
     pygame.draw.rect(screen, "black", blockudoku_board)
     for i in range(WIDTH*HEIGHT):
-        if grid[i]==-1:
-            pygame.draw.rect(screen, "grey", blockudoku_squares[i])
-        elif grid[i]==0:
+        if grid[i]==0:
             pygame.draw.rect(screen, "black", blockudoku_squares[i])
         elif grid[i]==1:
             pygame.draw.rect(screen, "blue", blockudoku_squares[i])
