@@ -25,21 +25,19 @@ def down_color_square(pos, grid, robozzle_squares):
 
 
 def update_view(screen, blockudoku_board, blockudoku_squares):
-    screen.fill("blue")
+    screen.fill("yellow")
     #update the view of the grid
     pygame.draw.rect(screen, "black", blockudoku_board)
     for i in range(WIDTH*HEIGHT):
         if grid[i]==-1:
             pygame.draw.rect(screen, "grey", blockudoku_squares[i])
         elif grid[i]==0:
-            pygame.draw.rect(screen, "white", blockudoku_squares[i])
+            pygame.draw.rect(screen, "black", blockudoku_squares[i])
         elif grid[i]==1:
             pygame.draw.rect(screen, "blue", blockudoku_squares[i])
         elif grid[i]==2:
-            pygame.draw.rect(screen, "yellow", blockudoku_squares[i])
+            pygame.draw.rect(screen, "green", blockudoku_squares[i])
         elif grid[i]==3:
-            pygame.draw.rect(screen, "orange", blockudoku_squares[i])
-        elif grid[i]==4:
             pygame.draw.rect(screen, "red", blockudoku_squares[i])
         pygame.draw.rect(screen, "black", blockudoku_squares[i], 1)
     
@@ -49,7 +47,7 @@ screen = pygame.display.set_mode((1920, 990))
 clock = pygame.time.Clock()
 running = True
 
-robozzle_board = pygame.Rect(0, 0, 990, 990)
+robozzle_board = pygame.Rect(0, 0, (990/HEIGHT)*WIDTH, 990)
 robozzle_squares = []
 grid = [0 for i in range(WIDTH*HEIGHT)]
 
